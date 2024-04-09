@@ -1,6 +1,3 @@
-### Prerequisites:
-- Node.js installed on your machine ([Download Node.js](https://nodejs.org/))
-- Google BigQuery and Snowflake accounts (or access to existing accounts)
 
 ### Instructions:
 
