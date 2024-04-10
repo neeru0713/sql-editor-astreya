@@ -11,7 +11,7 @@ const DisplayTable: React.FC<DisplayTableProps> = ({ data }) => {
     const columns = Object.keys(data[0]);
 
     return (
-        <div className="h-[400px]">
+        <div className="mx-1 p-4">
             <h2 className="font-bold ">Output</h2>
             <Table data={data} columns={columns} />
         </div>

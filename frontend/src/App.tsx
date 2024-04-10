@@ -11,7 +11,13 @@ const App: React.FC = () => {
     { id: 3, name: "test3", age: 35 },
   ];
 
-  const [query, setQuery] = useState<string>("");
+  // Giving a default value
+  const [query, setQuery] = useState<string>(`CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    age INT,
+    department VARCHAR(100)
+)`);
   const [selectedDatabase, setSelectedDatabase] = useState<string>("");
   const [queryHistory, setQueryHistory] = useState<string[]>([]);
 
@@ -24,7 +30,7 @@ const App: React.FC = () => {
   };
 
   const handleQuerySelect = (query: string) => {
-    setQueryHistory((prevHistory) => [...prevHistory, query]);
+   setQuery(query)
   };
 
   const handleRunQuery = (queryToRun: string) => {
@@ -32,6 +38,8 @@ const App: React.FC = () => {
       query: queryToRun,
       database: selectedDatabase
     }
+    setQueryHistory((prevHistory) => [...prevHistory, query]);
+
 
     fetch(`${API_URL}/query`, {
       method: "POST",
@@ -55,12 +63,13 @@ const App: React.FC = () => {
       <div className="navbar flex m-5 font-bold text-3xl p-2 text-gray-700">
         SQL Editor - Astreya
       </div>
-      <div className="app flex h-[800px] border mx-10 mt-10">
+      <div className="app flex h-[800px] border border-gray-500 rounded-md mx-10 mt-10">
         <Sidebar
+        queryHistory={queryHistory}
           onSelectDatabase={handleDatabaseSelect}
           onQuerySelect={handleQuerySelect}
         />
-        <div className="flex border flex-col w-[85%]">
+        <div className="flex border  border-r-0 border-t-0 border-b-0 border-gray-500 flex-col w-[85%]">
           <Editor value={query} onChange={handleQueryChange}  handleRunQuery={handleRunQuery} />
           <DisplayTable data={tableData} />
         </div>

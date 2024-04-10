@@ -56,7 +56,7 @@ const Editor: React.FC<EditorProps> = ({ value, onChange, handleRunQuery }) => {
   };
 
   return (
-    <div className="h-[400px] mx-1 p-4 flex flex-col gap-4">
+    <div className="mx-1 p-4 flex flex-col gap-4">
       <div className="editor-pane flex font-semibold gap-4">
         <button
           className="border border-1 border-teal-800 bg-teal-600 rounded-md px-2 py-1 text-white flex gap-1 items-center hover:bg-teal-700"
