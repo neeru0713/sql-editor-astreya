@@ -22,11 +22,15 @@ const Editor: React.FC<EditorProps> = ({ value, onChange }) => {
     };
 
     return (
-        <div className="mr-5 flex flex-col gap-1">
-            <div className="editor-pane flex">
+        <div className="h-[400px] mx-1 p-4 flex flex-col gap-8">
+            <div className="editor-pane flex font-semibold gap-4">
                 <button className="border border-1 border-teal-800 bg-teal-600 rounded-md px-2 text-white flex gap-1 items-center hover:bg-teal-700">
                     <IoPlayOutline />
-                    <span>Run</span>
+                    <span>Run Query</span>
+                </button>
+
+                <button className="border border-1 border-red-800 bg-red-600 rounded-md px-2 text-white flex gap-1 items-center hover:bg-red-700">
+                    <span>Cancel</span>
                 </button>
             </div>
             <AceEditor

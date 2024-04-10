@@ -27,24 +27,21 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="app flex flex-col gap-10">
-      <div className="navbar flex">SQL Editor</div>
-
-      <div className="flex m-10 border border-1 border-gray-300 h-[800px]">
+    <>
+      <div className="navbar flex m-5 font-bold text-3xl p-2 text-gray-700">
+        SQL Editor - Astreya
+      </div>
+      <div className="app flex h-[800px] border mx-10 mt-10">
         <Sidebar
           onSelectDatabase={handleDatabaseSelect}
           onQuerySelect={handleQuerySelect}
         />
-        <div className="flex flex-col w-[80%]">
-          <div className="h-[400px] p-2">
-            <Editor value={query} onChange={handleQueryChange} />
-          </div>
-          <div className="h-1/2">
-            <DisplayTable data={tableData} />
-          </div>
+        <div className="flex border flex-col w-[85%]">
+          <Editor value={query} onChange={handleQueryChange} />
+          <DisplayTable data={tableData} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
