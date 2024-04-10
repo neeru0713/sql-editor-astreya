@@ -4,24 +4,12 @@
 
 ## Instructions:
 
-#Clone the Repository**:
+1. Clone the Repository**:
    Clone the repository containing the SQL editor tool codebase:
-   
    ```bash
    git clone https://github.com/neeru0713/sql-editor-astreya
    cd sql-editor-astreya
-
-# SQL Editor Tool Setup Guide
-
-## Install Dependencies
-Install the dependencies for both the frontend and backend applications:
-
-```bash
-cd frontend
-npm install
-cd ../backend
-npm install
-
+   
 
 ## Flowchart
 
