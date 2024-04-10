@@ -6,9 +6,9 @@ import { API_URL } from "./config/config";
 
 const App: React.FC = () => {
   const tableData = [
-    { id: 1, name: "test", age: 30 },
-    { id: 2, name: "test2", age: 25 },
-    { id: 3, name: "test3", age: 35 },
+    { Id: 1, Name: "John Doe", Age:30, Department: 'Sales' },
+    { Id: 2, Name: "Jane Smith",  Age:25, Department: 'Marketing' },
+    { Id: 3, Name: "Bob Johnson",  Age:35, Department: 'Engineering' },
   ];
 
   // Giving a default value
