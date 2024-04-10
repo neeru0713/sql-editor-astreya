@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Editor from "./components/Editor";
 import DisplayTable from "./components/DisplayTable";
+import { API_URL } from "./config/config";
 
 const App: React.FC = () => {
   const tableData = [
@@ -26,6 +27,29 @@ const App: React.FC = () => {
     setQueryHistory((prevHistory) => [...prevHistory, query]);
   };
 
+  const handleRunQuery = (queryToRun: string) => {
+    const payload = {
+      query: queryToRun,
+      database: selectedDatabase
+    }
+
+    fetch(`${API_URL}/query`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
+  }
+
   return (
     <>
       <div className="navbar flex m-5 font-bold text-3xl p-2 text-gray-700">
@@ -37,7 +61,7 @@ const App: React.FC = () => {
           onQuerySelect={handleQuerySelect}
         />
         <div className="flex border flex-col w-[85%]">
-          <Editor value={query} onChange={handleQueryChange} />
+          <Editor value={query} onChange={handleQueryChange}  handleRunQuery={handleRunQuery} />
           <DisplayTable data={tableData} />
         </div>
       </div>
