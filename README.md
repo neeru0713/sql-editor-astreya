@@ -1,5 +1,5 @@
 ## App Preview
-<img width="1728" alt="Screenshot 2024-04-10 at 11 30 07 PM" src="https://github.com/neeru0713/sql-editor-astreya/assets/123808700/f1ca5641-448b-46ca-b4ad-11d0a2ca8eef">
+<img width="1727" alt="Screenshot 2024-04-10 at 11 32 01 PM" src="https://github.com/neeru0713/sql-editor-astreya/assets/123808700/bf3b07a1-2a12-474a-bdb8-79cf7bb58ec6">
 
 
 ## Instructions:
